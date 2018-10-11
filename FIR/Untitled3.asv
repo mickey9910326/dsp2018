@@ -1,0 +1,28 @@
+W_p = 0.4*pi;
+W_s = 0.6*pi;
+delta1 = 0.01;
+delta2 = 0.001;
+delta  = 0.001;
+
+W_c = W_s-W_p;
+
+A = -20*log10(delta);
+
+if A > 50
+    beta = 0.1102*(A-8.7);
+elseif A >= 21
+    bata = 0.5842*(A-21)^0.4 + 0.07886*(A-21);
+else
+    beta = 0;
+end
+
+M = (A-8)/(2.285*delta_w);
+M = round(M);
+
+%%
+alpha = M/2;
+for n=0:M
+    % MATLAB ±q1¶}©l
+    h[n+1] = sin(W_c*(n-alpha))/(pi*(n-alpha)) * besselj(0, beta)
+    
+

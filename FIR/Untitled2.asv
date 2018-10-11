@@ -1,0 +1,14 @@
+%% Args settings
+A   = [1, 1, 1];
+F   = [50, 250, 500];
+PHI = [0, 0, 0];
+
+Fs = 2000;
+N  = 2000;
+
+%% args settings
+W = 2*pi*F;
+t = [1:]
+for i=[1:length(F)]
+    data = data + A(i)*sin(W(i)*t + PHI(i));
+end
